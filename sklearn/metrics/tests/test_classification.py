@@ -386,6 +386,14 @@ def test_multilabel_confusion_matrix_binary():
     test([str(y) for y in y_true],
          [str(y) for y in y_pred])
 
+def test_multilabel_confusion_matrix_unary():
+    # Test multilabel confusion matrix - y_type not supported case 
+    y_true, y_pred, _ = [0,0],[0,0]
+
+    def test(y_true, y_pred):
+        cm = multilabel_confusion_matrix(y_true, y_pred)
+
+
 
 def test_multilabel_confusion_matrix_multiclass():
     # Test multilabel confusion matrix - multi-class case
